@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "967371380426",
+    "project_id": "hiwam0",
+    "storage_bucket": "hiwam0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:967371380426:android:729c7eb2acab5f1530c633",
+        "android_client_info": {
+          "package_name": "com.rn_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "967371380426-tiibcapj38ofpu4lia2mcjlkgq1fohrr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXnHlKzgcvNTTrHVow4Uc79NPuNMeHyc4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "967371380426-tiibcapj38ofpu4lia2mcjlkgq1fohrr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
