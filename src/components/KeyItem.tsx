@@ -117,7 +117,9 @@ const KeyItem: React.FC<KeyItemProps> = ({ yourKey: key }) => {
         <Text style={tailwind('text-xs text-gray-500')}>
           Username / Email:{' '}
         </Text>
-        <Text selectable>{key.data.email}</Text>
+        <Text selectable numberOfLines={1} style={tailwind('flex-1')}>
+          {key.data.email}
+        </Text>
       </View>
       <View style={tailwind('flex-row h-6 items-center')}>
         <Text
