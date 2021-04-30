@@ -22,20 +22,30 @@ const AddKeyModal: React.FC<AddKeyModalProps> = ({ setIsOpen }) => {
     email: '',
     password: '',
   });
+  const [error, setError] = useState('');
 
   const handleChange = (key: string, text: string) => {
+    setError('');
     setValues(old => ({ ...old, [key]: text }));
   };
 
+  const isValid = () => {
+    if (!values.name || !values.email || !values.password) {
+      return false;
+    }
+    return true;
+  };
+
   const onSubmit = () => {
-    console.log(values);
-    if (user) {
+    if (user && isValid()) {
       db()
         .collection('users')
         .doc(user.uid)
         .collection('keys')
         .add(values)
         .then(() => setIsOpen(false));
+    } else {
+      setError('Missing fields required.');
     }
   };
 
@@ -44,7 +54,8 @@ const AddKeyModal: React.FC<AddKeyModalProps> = ({ setIsOpen }) => {
   };
 
   return (
-    <View style={tailwind('flex flex-row flex-1 items-center justify-center')}>
+    <View
+      style={tailwind('flex flex-row flex-1 px-6 items-center justify-center')}>
       <View
         onTouchStart={() => {
           setIsOpen(false);
@@ -53,21 +64,37 @@ const AddKeyModal: React.FC<AddKeyModalProps> = ({ setIsOpen }) => {
       />
       <View style={tailwind('flex flex-1')}>
         <View
-          style={tailwind('p-4 w-2/3 self-center bg-gray-100 z-30 rounded-md')}>
+          style={tailwind(
+            'p-2 pt-4 w-full self-center bg-gray-100 z-30 rounded-md',
+          )}>
+          {!!error && (
+            <Text style={tailwind('self-center mb-4 text-xs text-red-500')}>
+              {error}
+            </Text>
+          )}
           <TextInput
             placeholder="Name of Account"
             onChangeText={text => handleChange('name', text)}
-            style={[styles.input, tailwind('w-full bg-white px-4 py-2')]}
+            style={[
+              styles.input,
+              tailwind('rounded w-full bg-white px-4 py-2'),
+            ]}
           />
           <TextInput
             placeholder="Email"
             onChangeText={text => handleChange('email', text)}
-            style={[styles.input, tailwind('mt-2 w-full bg-white px-4 py-2')]}
+            style={[
+              styles.input,
+              tailwind('rounded mt-2 w-full bg-white px-4 py-2'),
+            ]}
           />
           <TextInput
             placeholder="Password"
             onChangeText={text => handleChange('password', text)}
-            style={[styles.input, tailwind('mt-2 w-full bg-white px-4 py-2')]}
+            style={[
+              styles.input,
+              tailwind('rounded mt-2 w-full bg-white px-4 py-2'),
+            ]}
           />
 
           <View style={tailwind('mt-4 flex w-full flex-row')}>

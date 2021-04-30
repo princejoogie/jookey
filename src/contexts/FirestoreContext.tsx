@@ -32,6 +32,7 @@ export const AuthProvider: React.FC = ({ children }) => {
       .collection('users')
       .doc(user?.uid)
       .collection('keys')
+      .orderBy('name')
       .onSnapshot(snapshot => {
         setKeys(
           snapshot.docs.map(doc => ({ id: doc.id, data: { ...doc.data() } })),
