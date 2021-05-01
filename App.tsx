@@ -1,10 +1,11 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 import { SafeAreaView, StatusBar } from 'react-native';
-import tailwind from 'tailwind-rn';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { AuthProvider } from 'contexts/FirestoreContext';
 import Login from '@pages/Login';
+import tailwind from 'tailwind-rn';
 
 const Stack = createStackNavigator();
 
