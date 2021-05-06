@@ -102,10 +102,13 @@ const Login: React.FC<LoginProps> = ({ navigation, route }) => {
           setError('');
         }}
         style={[
-          tailwind('mt-6 px-4 py-2 bg-white text-sm w-3/4 rounded z-20'),
+          tailwind(
+            'mt-6 px-4 py-2 bg-white text-gray-900 text-sm w-3/4 rounded z-20',
+          ),
           styles.input,
         ]}
         placeholder="Email"
+        placeholderTextColor="#6B7280"
         keyboardType="email-address"
       />
 
@@ -121,8 +124,9 @@ const Login: React.FC<LoginProps> = ({ navigation, route }) => {
             setPassword(text);
             setError('');
           }}
-          style={tailwind('text-sm flex-1 py-2 ')}
+          style={tailwind('text-sm text-gray-900 flex-1 py-2 ')}
           placeholder="Password"
+          placeholderTextColor="#6B7280"
           secureTextEntry={hidden}
         />
 

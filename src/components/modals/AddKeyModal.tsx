@@ -74,26 +74,29 @@ const AddKeyModal: React.FC<AddKeyModalProps> = ({ setIsOpen }) => {
           )}
           <TextInput
             placeholder="Name of Account"
+            placeholderTextColor="#6B7280"
             onChangeText={text => handleChange('name', text)}
             style={[
               styles.input,
-              tailwind('rounded w-full bg-white px-4 py-2'),
+              tailwind('rounded text-gray-900 w-full bg-white px-4 py-2'),
             ]}
           />
           <TextInput
             placeholder="Email"
+            placeholderTextColor="#6B7280"
             onChangeText={text => handleChange('email', text)}
             style={[
               styles.input,
-              tailwind('rounded mt-2 w-full bg-white px-4 py-2'),
+              tailwind('rounded text-gray-900 mt-2 w-full bg-white px-4 py-2'),
             ]}
           />
           <TextInput
             placeholder="Password"
+            placeholderTextColor="#6B7280"
             onChangeText={text => handleChange('password', text)}
             style={[
               styles.input,
-              tailwind('rounded mt-2 w-full bg-white px-4 py-2'),
+              tailwind('rounded text-gray-900 mt-2 w-full bg-white px-4 py-2'),
             ]}
           />
 
